@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .App-logo {
   height: 40vmin;
 }
@@ -19,4 +23,78 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+
+.link {
+  color: white!important;
+}
+
+.beer-container {
+  display: flex;
+  width: 80%;
+  flex-grow: 30%;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.thumb {
+  height: 180px;
+  width: auto;
+  margin: 20px;
+}
+
+.beer {
+  border: 2px black solid;
+  border-radius: 10px;
+  width: 400px;
+  height: 400px;
+  margin: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.beer:hover {
+  overflow: visible;
+  z-index: 10000;
+  background-color: purple;
+  color: white;
+}
+
+.beer:hover .description {
+  margin-left: -2px;
+  margin-right: -2px;
+  /* padding-bottom: 0.75em; */
+  background-color: inherit;
+  display: inline-block;
+  /* border-bottom: 2px black solid;*/
+  border-left: 2px black solid;
+  border-right: 2px black solid;
+}
+
+
+.buttons {
+  /* visibility: hidden; */
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.ratings {
+  position: absolute;
+  top: 2em;
+  right: 5px;
+}
+
+.ratings span {
+  padding: 0.25em;
+}
+.buttons:hover,
+.ratings span:hover {
+  cursor: pointer;
+  background: black;
+  color: white;
+}
+.beer:hover .buttons {
+  visibility: visible;
 }
