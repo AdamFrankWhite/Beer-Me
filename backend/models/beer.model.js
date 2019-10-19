@@ -8,8 +8,8 @@ const beerSchema = new Schema({
     beerDescription: {type: String, required: true},
     brewery: {type: String, required: true},
     date: {type: Date, required: true},
-    beerID: {type: String, required: true},
-    stars: {type: String, required: false}
+    stars: {type: String, required: false},
+    img: {type: String, required: true}
 }, {
     timestamps: true
 })

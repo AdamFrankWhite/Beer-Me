@@ -4,24 +4,24 @@ import axios from 'axios'
 class MyBeers extends React.Component {
     constructor() {
         super()
-        this.state = {
-            beerData: [],
-            favouriteBeers: []
-        }
-        this.addBeer = this.addBeer.bind(this)
+    //     this.state = {
+    //         beerData: [],
+    //         favouriteBeers: []
+    //     }
+    //     this.addBeer = this.addBeer.bind(this)
     }
 
-    addBeer(id) {
-        console.log(`Beer ${id} added`)
-    }
+    // addBeer(id) {
+    //     console.log(`Beer ${id} added`)
+    // }
     componentDidMount() {
-        const favouriteBeers = axios.get("http://localhost:3000/my-beers").then(response => response.json()).then(data => {
-            this.setState({favouriteBeers: data})
-            console.log(data)})
+            // axios.get("http://localhost:5000/my-beers/").then(res => {
+            // this.setState({favouriteBeers: res.data})
+            // console.log(res.data)})
        
     }
     render() {
-        const beers = this.state.favouriteBeers.map(beer => <Beer src={beer.image_url} id={beer.id} name={beer.name} abv={beer.abv} description={beer.description} addBeer={this.addBeer}/>)
+        const beers = this.props.favouriteBeers.map(beer => <Beer myBeers={true} beerData={beer} src={beer.img} id={beer._id} name={beer.name} abv={beer.abv} description={beer.description} addBeer={this.props.addBeer} deleteBeer={this.props.deleteBeer} />)
         return (
             <div className="App">
                 

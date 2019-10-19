@@ -13,17 +13,17 @@ router.route('/add').post((req, res) => {
     const beerDescription = req.body.beerDescription
     const brewery = req.body.brewery
     const date = Date.parse(req.body.date)
-    const beerID = req.body.beerID
     const stars = req.body.stars
+    const img = req.body.img
 
     const newBeer = new Beer({
-        beerID,
         beerName,
         beerType,
         beerDescription,
         brewery,
         date,
-        stars
+        stars,
+        img
         
     })
     newBeer.save()
@@ -33,8 +33,8 @@ router.route('/add').post((req, res) => {
 
 router.route('/:id').delete((req, res) => {
     Beer.findByIdAndDelete(req.params.id)
-        .then(() => res.json('Beer deleted')
-        .catch(err => res.status(400).json('Error: ' + err)))
+        .then(() => res.json('Beer deleted'))
+        .catch(err => res.status(400).json('Error: ' + err))
 })
 
 router.route('/update/:id').post((req, res) => {
@@ -57,11 +57,11 @@ router.route('/update/:id').post((req, res) => {
 module.exports = router
 
 // {
-// 	"beerName": "Plum Porter",
-// 	"beerDescription": "plummy, light porter",
-// 	"brewery": "Titanic",
 // 	"stars": "5",
-// 	"date": "2019-10-16T20:36:52.672Z",
-// 	"beerType": "porter",
-// 	"beerID": "5"
+// 	"beerName": "Marshmallow Stout",
+// 	"brewery": "Tiny Rebel",
+// 	"beerType": "Stout",
+// 	"date": "2019-10-16T20:36:52.672Z" ,
+// 	"beerDescription": "dark, sweet, thick stout",
+// 	"beerID": 5
 // }

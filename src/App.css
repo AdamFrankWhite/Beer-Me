@@ -86,11 +86,13 @@
   right: 5px;
 }
 
+
 .ratings span {
   padding: 0.25em;
 }
 .buttons:hover,
-.ratings span:hover {
+.ratings span:hover,
+.delete-beer {
   cursor: pointer;
   background: black;
   color: white;
